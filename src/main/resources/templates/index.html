@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Spring Boot Thymeleaf VueJS</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+<body>
+<div id="content"></div>
+<script type="text/babel" src="main.js"></script>
+<h2>
+    <span th:text="'Message: ' + ${message}"></span>
+</h2>
+<div id="app">
+    {{ message }}
+</div>
+
+
+<footer id="footer">
+    <p >copyright {{date.getFullYear()}}</p>
+</footer>
+
+<script>
+    new Vue({
+      el: '#app',
+      data:{
+        message: 'Hello Vue!'
+      }
+    })
+
+</script>
+
+<script>
+    new Vue({
+      el: '#footer',
+      data: {
+          date: new Date()
+      }
+    })
+
+</script>
+
+
+</body>
+</html>
